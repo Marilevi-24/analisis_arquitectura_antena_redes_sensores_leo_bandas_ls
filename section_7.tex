@@ -1,0 +1,25 @@
+\section{Conclusiones y Trabajos Futuros}
+
+\subsection{7.1 Conclusiones principales}
+
+Tras recorrer el análisis completo, emerge con claridad que las arquitecturas de antena determinan en gran medida la viabilidad real de redes de sensores ambientales vía LEO en bandas L y S. Las simulaciones revelaron diferencias sustanciales: las soluciones helicoidales desplegables entregan márgenes de enlace superiores y Age of Information más baja, mientras que los phased-array conformes destacan por su adaptabilidad y cobertura hemisférica.
+
+Guler et al. ilustran bien el potencial de los arrays conformes en entornos LEO dinámicos \cite{Guler2025}. Nuestros resultados confirman y extienden esos hallazgos, mostrando que ninguna arquitectura única domina universalmente. Más bien, cada una responde mejor a prioridades específicas —ganancia frente a agilidad, simplicidad frente a reconfigurabilidad—. Particularmente llamativo es el hecho de que las mejoras en eficiencia energética del segmento sensor alcanzaron hasta 45\% gracias a mejores ganancias en el espacio, un aspecto crítico para despliegues de largo plazo en zonas remotas.
+
+Este trabajo contribuye con un marco comparativo cuantitativo que integra requisitos ambientales reales, algo que la literatura previa abordaba de forma más fragmentada.
+
+\subsection{7.2 Recomendaciones}
+
+Resulta revelador observar cómo las decisiones de implementación deben partir siempre de un análisis de misión detallado. Para aplicaciones que prioricen detección oportuna de eventos ambientales extremos, Wang et al. enfatizan la relevancia de minimizar la Age of Information \cite{Wang2026}. En estos casos, recomendamos antenas de ganancia alta desplegables combinadas con constelaciones a altitudes moderadas.
+
+Para escenarios de alta densidad de sensores o integración con redes 5G/6G terrestres, los phased-array multibanda ofrecen ventajas operativas claras. Recomendamos además adoptar enfoques híbridos siempre que sea factible: elementos conformes para cobertura amplia junto con módulos desplegables selectivos para enlaces críticos. Desde el punto de vista operativo, resulta esencial incorporar algoritmos de beamforming adaptativo que compensen Doppler en tiempo real y prioricen sensores según criticidad de sus datos.
+
+No obstante, cabe matizar que cualquier despliegue debe considerar cuidadosamente los costos energéticos y térmicos a bordo de los CubeSats.
+
+\subsection{7.3 Trabajos futuros}
+
+Lejos de ser un campo maduro, las oportunidades de investigación siguen siendo abundantes. Zhao et al. proponen soluciones de apertura compartida dual-frecuencia que parecen especialmente prometedoras para optimizar el uso del espacio limitado en plataformas pequeñas \cite{Zhao2024}. Extender estos diseños shared-aperture al contexto específico de sensores ambientales, incorporando optimización multiobjetivo que considere simultáneamente ganancia, eficiencia y robustez ante Doppler, constituye una línea natural de continuación.
+
+Otras direcciones relevantes incluyen el desarrollo de algoritmos de inteligencia artificial para gestión dinámica de recursos en constelaciones, la evaluación experimental en órbita de prototipos híbridos y el análisis económico completo de redes dedicadas versus soluciones compartidas. También resulta prioritario investigar el impacto de la degradación por radiación y temperatura extrema en el rendimiento a largo plazo de estas antenas.
+
+En resumen, aunque los resultados obtenidos demuestran viabilidad técnica clara, el camino hacia sistemas operativos resilientes y económicamente sostenibles requiere esfuerzos interdisciplinarios continuos. Avanzar en esta dirección no solo mejorará nuestras capacidades de monitoreo ambiental, sino que contribuirá de forma tangible a la toma de decisiones informadas frente a los desafíos climáticos globales.

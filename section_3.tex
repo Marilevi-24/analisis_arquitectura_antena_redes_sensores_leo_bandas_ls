@@ -1,0 +1,51 @@
+\section{Requisitos de Sistema y Modelado}
+
+\subsection{3.1 Arquitectura de red de sensores}
+
+Particularmente llamativo es el hecho de que las redes de sensores ambientales vía LEO exigen una arquitectura radicalmente distinta a las soluciones terrestres convencionales. Los nodos IoT deben operar con presupuestos energéticos extremadamente ajustados, transmitiendo paquetes cortos de datos ambientales solo cuando se detectan eventos relevantes o según programación temporal. 
+
+Wang et al. enfatizan la necesidad de minimizar la Age of Information (AoI) para lograr detección casi instantánea de cambios ambientales, lo que impone requisitos estrictos de cobertura frecuente y enlaces uplink confiables desde sensores dispersos \cite{Wang2026}. En la práctica, esto se traduce en una arquitectura híbrida donde constelaciones LEO actúan como backbone de conectividad directa, eliminando en gran medida la dependencia de gateways terrestres en zonas remotas.
+
+Aunque esta aproximación promete escalabilidad global, tiende a generar desafíos en la gestión de colisiones y asignación de recursos cuando cientos de sensores compiten por ventanas de visibilidad limitadas. Resulta revelador observar cómo el diseño de la red debe priorizar robustez sobre throughput, invirtiendo la lógica habitual de las redes de datos.
+
+\subsection{3.2 Modelo de propagación y Doppler}
+
+Uno de los desafíos persistentes que surge al analizar estos sistemas radica en el modelado preciso del canal bajo movimiento relativo extremo. Las variaciones rápidas de distancia, ángulo de elevación y condiciones atmosféricas imponen un comportamiento del canal muy distinto al de enlaces fijos o GEO.
+
+Lejos de ser un asunto resuelto, la incorporación del efecto Doppler y el desvanecimiento por multipath en entornos ambientales (bosques, montañas, superficies de agua) exige modelos estocásticos que capturen tanto la componente LOS como las contribuciones difusas. Wang et al. destacan cómo la frescura de la información ambiental depende críticamente de la frecuencia de revisitas y la calidad sostenida del enlace \cite{Wang2026}.
+
+El presupuesto de enlace constituye la herramienta central para dimensionar el sistema. Se expresa típicamente como:
+
+\begin{equation}
+P_{R} = P_{T} + G_{T} + G_{R} - L_{FS} - L_{Atm} - L_{Other} + 10\log_{10}(kTB)
+\label{eq:link_budget}
+\end{equation}
+
+donde los términos representan potencia transmitida, ganancias de antena, pérdidas de espacio libre, atmosféricas y otros márgenes. Este modelo permite evaluar el margen de enlace disponible bajo restricciones reales de sensores de bajo consumo.
+
+\subsection{3.3 Requisitos de antena}
+
+Resulta especialmente interesante cómo los requisitos de antena emergen como el factor limitante más crítico una vez definidos los parámetros orbitales y de propagación. Cakaj presenta conceptos fundamentales de diseño de estaciones terrestres LEO que, adaptados al segmento espacial y a terminales IoT, revelan la necesidad de patrones de radiación hemisféricos, alta eficiencia y polarización circular robusta \cite{Cakaj2023}.
+
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.3} % Mantiene el espaciado vertical estandarizado por la IEEE
+\centering
+\caption{\textsc{Parámetros Clave de Constelaciones LEO para Modelado de Enlaces en Bandas L/S}}
+\label{tab:parametros_leo_bandas_ls}
+% \columnwidth obliga a la tabla a medir exactamente el ancho del margen de la columna actual
+\begin{tabularx}{\columnwidth}{|X|c|}
+\hline
+\textbf{Parámetro} & \textbf{Valor Típico} \\ \hline
+Altitud orbital & 500–1200 km \\ \hline
+Velocidad relativa & 7.5–7.8 km/s \\ \hline
+Ventana de visibilidad & 5–15 minutos \\ \hline
+Desplazamiento Doppler (Banda S) & $\pm$ 40 kHz \\ \hline
+Frecuencia portadora L & 1.6 GHz \\ \hline
+Frecuencia portadora S & 2.4 GHz \\ \hline
+Sensibilidad receptor IoT & -120 dBm \\ \hline
+\end{tabularx}
+\end{table}
+
+No obstante, cabe matizar que muchos diseños optimizados para comunicaciones de voz o datos de alta velocidad tienden a sobreestimar la viabilidad en escenarios de sensores ambientales. La combinación de ganancia suficiente con bajo consumo, peso reducido y resistencia a vibraciones de lanzamiento impone trade-offs complejos. 
+
+Los requisitos finales derivan directamente del link budget de la Ecuación~\ref{eq:link_budget} y deben garantizar un margen positivo incluso en las condiciones más desfavorables de elevación y propagación. Este análisis sienta las bases cuantitativas para la evaluación comparativa de arquitecturas que se desarrolla en las secciones siguientes.

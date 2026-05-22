@@ -1,0 +1,27 @@
+\section{Discusión}
+
+\subsection{6.1 Ventajas y trade-offs}
+
+Resulta revelador observar cómo las arquitecturas analizadas revelan un panorama de compromisos inherentes más que soluciones universales. Las antenas helicoidales desplegables destacan por ofrecer márgenes de enlace superiores y mejor eficiencia energética en el segmento sensor, permitiendo baterías más pequeñas y vidas útiles extendidas. Sin embargo, esta ganancia viene a costa de menor agilidad en el beamforming comparada con soluciones phased-array.
+
+Shayea et al. subrayan las perspectivas de integración entre IoT y constelaciones LEO dentro de ecosistemas 5G/6G, donde precisamente estos trade-offs energéticos y de cobertura se convierten en factores decisivos \cite{Shayea2024}. En muchos casos estudiados, las configuraciones conformes ofrecen excelente adaptabilidad estructural y escaneo electrónico rápido, cualidades valiosas para handover fluido en constelaciones densas. No obstante, cabe matizar que su menor ganancia direcional puede limitar el alcance efectivo en sensores de ultra-bajo consumo ubicados en terrenos complejos.
+
+Particularmente llamativo es el hecho de que las soluciones multibanda tienden a proporcionar la mayor flexibilidad operativa. Aun así, introducen complejidad adicional en el diseño de alimentadores y mayor disipación térmica, aspectos críticos en plataformas CubeSat con restricciones térmicas y de potencia.
+
+\subsection{6.2 Limitaciones técnicas}
+
+Uno de los desafíos persistentes que surge al analizar estos sistemas radica en la brecha entre simulaciones controladas y despliegues reales. Aunque los modelos incorporaron Doppler, desvanecimiento y obstrucciones, fenómenos como variaciones impredecibles de actitud del satélite o degradación por radiación espacial tienden a reducir el rendimiento observado en órbita.
+
+Akar et al. detallan con claridad las limitaciones fundamentales del enfoque Direct-to-Satellite IoT, donde los efectos Doppler severos y la necesidad de sincronización precisa representan obstáculos importantes para enlaces confiables con dispositivos de muy bajo costo \cite{Akar2026}. En nuestras evaluaciones, estos efectos se manifestaron más agresivamente en banda S, forzando compromisos en tasa de datos o frecuencia de transmisión.
+
+Lejos de ser un asunto resuelto, la escalabilidad a miles de sensores por celda satelital sigue presentando riesgos de colisión y saturación. Las arquitecturas phased-array activas mitigan parcialmente este problema mediante beamforming selectivo, aunque a expensas de mayor consumo y complejidad de procesamiento a bordo.
+
+\subsection{6.3 Impacto en gestión ambiental}
+
+Aunque los avances tecnológicos resultan prometedores, su verdadero valor se mide en la capacidad de generar impacto tangible en la gestión de ecosistemas. Cakaj resalta la importancia de diseños de estación terrestre robustos que, extrapolados al segmento espacial, sugieren que sistemas bien dimensionados pueden habilitar monitoreo continuo en regiones previamente desconectadas \cite{Cakaj2023}.
+
+Las reducciones en Age of Information logradas con antenas de alta ganancia permiten detectar eventos como incendios forestales, inundaciones o cambios en biodiversidad con horas de anticipación adicional. Esta ventana temporal extra puede marcar la diferencia entre contención efectiva y daño irreversible. 
+
+No obstante, cabe matizar que la viabilidad económica y regulatoria de estas constelaciones dedicadas al monitoreo ambiental sigue siendo un factor abierto. La integración con redes 5G/6G terrestres híbridas parece ofrecer un camino pragmático, donde los satélites LEO cubren las zonas muertas y las redes terrestres manejan el tráfico denso en áreas urbanas o accesibles.
+
+En última instancia, las elecciones de arquitectura de antena trascienden lo meramente técnico. Determinan qué nivel de resolución temporal y espacial podemos lograr en la observación planetaria, influyendo directamente en la calidad de las políticas ambientales y en nuestra capacidad colectiva de responder a la crisis climática con datos oportunos y confiables. Las brechas identificadas abren líneas de investigación claras hacia diseños híbridos más resilientes y eficientes.
